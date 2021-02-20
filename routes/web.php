@@ -18,3 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('dvd_records', ['uses'=>'CdRecordsController@index', 'as'=>'dvd_records.index']);
+Route::resource('dvd_records','CdRecordsController');
+Route::get('csv', 'CdRecordsController@csv')->name('dvd_records.csv');
